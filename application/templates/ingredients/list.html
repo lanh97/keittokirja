@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Ingredients what you can use, if there isn't a ingredient you need, please add.</th>
+    </tr>
+    {% for ingredient in ingredients %}
+    <tr>
+      <td>{{ ingredient.name }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+{% endblock %}

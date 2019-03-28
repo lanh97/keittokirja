@@ -11,5 +11,6 @@ class Ingredient(db.Model):
     yksikkohinta = db.Column(db.Integer)
 
 
-    def __init__(self, name):
+    def __init__(self, name, lisatiedot):
         self.name = name
+        self.lisatiedot = lisatiedot

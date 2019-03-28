@@ -1,14 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Ingredients what you can use, if there isn't a ingredient you need, please add.</th>
-    </tr>
-    {% for ingredient in ingredients %}
-    <tr>
-      <td>{{ ingredient.name }}</td>
-    </tr>
-    {% endfor %}
-  </table>
+<table>
+  <tr>
+    <th>Ingredients what you can use, if there isn't a ingredient you need, please add.</th>
+  </tr>
+  {% for ingredient in ingredients %}
+  <tr>
+    <td>
+      <a href="{{ url_for('singredient_index', ingredient_id=ingredient.id) }}">{{ ingredient.name }}</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
 {% endblock %}

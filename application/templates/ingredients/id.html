@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+  <tr>
+    <th>
+      <form method="POST" action="{{ url_for('ingredient_lisatiedot') }}">
+      {{ form.lisatiedot.label }}
+      {{ form.lisatiedot }}
+    <input type="submit" value="Lisää" />
+    </form>
+    </th>
+  </tr>
+</table>
+{% endblock %}

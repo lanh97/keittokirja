@@ -12,7 +12,7 @@ def ingredients_index():
 
 @app.route("/ingredients/new/")
 def ingredients_form():
-    return render_template("ingredients/new.html", form = IngredientsForm())
+    return render_template("ingredients/new.html", form=IngredientsForm())
 
 
 @app.route("/ingredients/<ingredient_id>/", methods=["GET"])
@@ -32,16 +32,27 @@ def ingredient_lisatiedot():
     return redirect(url_for("ingredients_index"))
 
 
+@app.route("/ingredients/<ingredient_id>/", methods=["POST"])
+@login_required
+def ingredients_delete(ingredient_id):
+
+    ingre = Ingredient.query.get(ingredient_id)
+    db.session().delete(ingre)
+    db.session().commit()
+
+    return redirect(url_for("ingredients_index"))
+
+
 @app.route("/ingredients/", methods=["POST"])
 @login_required
 def ingredients_create():
     form = IngredientsForm(request.form)
 
     if not form.validate():
-        return render_template("ingredients/new.html", form = form)
+        return render_template("ingredients/new.html", form=form)
 
     ingre = Ingredient(form.name.data, form.lisatiedot.data)
     db.session().add(ingre)
     db.session().commit()
-  
+
     return redirect(url_for("ingredients_index"))

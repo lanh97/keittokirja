@@ -2,6 +2,7 @@ from application import app, db
 from flask import redirect, render_template, request, url_for, session
 from application.ingredients.models import Ingredient
 from application.ingredients.forms import IngredientForm, IngredientsForm
+from flask_login import login_required
 
 
 @app.route("/ingredients", methods=["GET"])
@@ -21,6 +22,7 @@ def singredient_index(ingredient_id):
 
 
 @app.route("/ingredients/lisatiedot", methods=["POST"])
+@login_required
 def ingredient_lisatiedot():
     form = IngredientForm(request.form)
     id = session["ingredientid"]
@@ -31,6 +33,7 @@ def ingredient_lisatiedot():
 
 
 @app.route("/ingredients/", methods=["POST"])
+@login_required
 def ingredients_create():
     form = IngredientsForm(request.form)
 

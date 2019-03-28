@@ -34,8 +34,8 @@ def auth_signup():
         return render_template("auth/signup.html", form=form,
                                error="Käyttäjätunnus on jo olemassa")
 
-    user = User(form.username.data,
-                form.password.data, form.name.data)
+    user = User( form.name.data, form.username.data,
+                form.password.data)
     db.session().add(user)
     db.session().commit()
 

@@ -6,8 +6,9 @@ class Recipe(Base):
 
     name = db.Column(db.String(144), nullable=False)
     details = db.Column(db.String(144))
-    cookinginstruction = db.Column(db.String(1000))
+    cookinginstructions = db.Column(db.String(1000))
 
-    def __init__(self, name, cookinginstruction):
+    def __init__(self, name ,details ,cookinginstructions):
         self.name = name
-        self.cookinginstruction = cookinginstruction
+        self.details = details
+        self.cookinginstructions = cookinginstructions

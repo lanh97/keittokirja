@@ -10,7 +10,7 @@ def recipes_form():
     return render_template("recipes/new.html", form=RecipeForm())
 
 
-@app.route("/reicipes/", methods=["POST"])
+@app.route("/recipes/", methods=["POST"])
 @login_required
 def recipes_create():
     form = RecipeForm(request.form)
@@ -18,8 +18,8 @@ def recipes_create():
     if not form.validate():
         return render_template("recipes/new.html", form=form)
 
-    recip = Recipe(form.name.data, form.lisatiedot.data,
-                   form.cookinginstruction.data)
+    recip = Recipe(form.name.data, form.details.data,
+                   form.cookinginstructions.data)
     db.session().add(recip)
     db.session().commit()
 

@@ -1,6 +1,8 @@
 from application import db
 from application.models import Base
 
+from sqlalchemy.sql import text
+
 
 class Recipe(Base):
 
@@ -14,3 +16,17 @@ class Recipe(Base):
         self.name = name
         self.details = details
         self.cookinginstructions = cookinginstructions
+
+    @staticmethod
+    def find_recipes_with_no_ingredients():
+        stmt = text("SELECT recipe.id, recipe.name FROM recipe"
+                     " LEFT JOIN recipe_ingredient ON recipe_ingredient.recipe_id = recipe.id"
+                     " GROUP BY recipe.id"
+                     " HAVING COUNT(recipe_ingredient.id) = 0")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"id":row[0], "name":row[1]})
+
+        return response

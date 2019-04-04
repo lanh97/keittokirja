@@ -1,7 +1,21 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <p>
-    Hello world!
-  </p>
+<p>
+  Hello world!
+</p>
+{% if needs_ingredient is defined %}
+<p>
+  The following recipes need ingredient:
+</p>
+<ul>
+  {% for recipe in needs_ingredient %}
+  <li>
+    {{recipe.id}} {{recipe.name}}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
 {% endblock %}

@@ -1,8 +1,8 @@
 from application import app, db
 from flask import redirect, render_template, request, url_for, session
+from flask_login import login_required
 from application.ingredients.models import Ingredient
 from application.ingredients.forms import IngredientForm, IngredientsForm
-from flask_login import login_required
 
 
 @app.route("/ingredients", methods=["GET"])

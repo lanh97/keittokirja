@@ -8,6 +8,8 @@ class Recipe(Base):
     details = db.Column(db.String(144))
     cookinginstructions = db.Column(db.String(1000))
 
+    recipeingredient = db.relationship("RecipeIngredient", backref='recipe', lazy=True)
+
     def __init__(self, name ,details ,cookinginstructions):
         self.name = name
         self.details = details

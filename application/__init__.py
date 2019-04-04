@@ -26,6 +26,9 @@ from application.recipes import views
 from application.auth import models
 from application.auth import views
 
+from application.recipesingredient import models
+from application.recipesingredient import views
+
 from application.auth.models import User
 from os import urandom
 

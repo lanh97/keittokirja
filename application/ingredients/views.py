@@ -21,13 +21,13 @@ def singredient_index(ingredient_id):
     return render_template("ingredients/id.html", form=IngredientForm())
 
 
-@app.route("/ingredients/lisatiedot", methods=["POST"])
+@app.route("/ingredients/details", methods=["POST"])
 @login_required
 def ingredient_lisatiedot():
     form = IngredientForm(request.form)
     id = session["ingredientid"]
     ingre = Ingredient.query.get(id)
-    ingre.lisatiedot = form.lisatiedot.data
+    ingre.details = form.details.data
     db.session().commit()
     return redirect(url_for("ingredients_index"))
 
@@ -51,7 +51,7 @@ def ingredients_create():
     if not form.validate():
         return render_template("ingredients/new.html", form=form)
 
-    ingre = Ingredient(form.name.data, form.lisatiedot.data)
+    ingre = Ingredient(form.name.data, form.details.data)
     db.session().add(ingre)
     db.session().commit()
 

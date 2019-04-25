@@ -8,16 +8,16 @@
       <td>{{ form.name }}</td>
     </tr>
     <ul>
-        {% for error in form.name.errors %}
-        <li>{{ error }}</li>
-        {% endfor %}
-      </ul>
+      {% for error in form.name.errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
     <tr>
       <td>{{ form.details.label }}</td>
-        <td>{{ form.details }}</td>
+      <td>{{ form.details }}</td>
     </tr>
     <tr>
-      <td><input type="submit" value="Add a new ingredient"/></td>
+      <td><input type="submit" value="Add a new ingredient" /></td>
     </tr>
   </table>
 </form>

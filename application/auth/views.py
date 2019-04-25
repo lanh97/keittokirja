@@ -32,9 +32,9 @@ def auth_signup():
 
     if User.query.filter_by(username=form.username.data).first():
         return render_template("auth/signup.html", form=form,
-                               error="Käyttäjätunnus on jo olemassa")
+                               error="User already exists")
 
-    user = User( form.name.data, form.username.data,
+    user = User(form.name.data, form.username.data,
                 form.password.data)
     db.session().add(user)
     db.session().commit()

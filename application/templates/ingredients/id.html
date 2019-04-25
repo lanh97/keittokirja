@@ -5,11 +5,18 @@
   <tr>
     <th>
       <form method="POST" action="{{ url_for('ingredient_lisatiedot') }}">
-      {{ form.details.label }}
-      {{ form.details }}
-    <input type="submit" value="Lisää" />
-    </form>
+        {{ form.details.label }}
     </th>
   </tr>
+  <tr>
+    <td>{{ form.details }}</td>
+  </tr>
+  <tr>
+    <td> <input type="submit" value="Add" /> </td>
+  </tr>
+
+
+  </form>
+
 </table>
 {% endblock %}

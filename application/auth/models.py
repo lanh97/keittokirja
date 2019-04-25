@@ -26,6 +26,6 @@ class User(Base):
 
     def is_authenticated(self):
         return True
-
+## authorisointi
     def roles(self):
         return ["ADMIN"]

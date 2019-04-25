@@ -10,6 +10,7 @@ def recipes_index():
     return render_template("recipes/list.html", recipes=Recipe.query.all())
 
 @app.route("/recipes/new/")
+@login_required
 def recipes_form():
     return render_template("recipes/new.html", form=RecipeForm())
 

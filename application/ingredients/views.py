@@ -11,6 +11,7 @@ def ingredients_index():
 
 
 @app.route("/ingredients/new/")
+@login_required
 def ingredients_form():
     return render_template("ingredients/new.html", form=IngredientsForm())
 

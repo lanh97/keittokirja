@@ -1,0 +1,8 @@
+## Asennusohje
+Kyseinen tietokantasovellus on myös herokussa ja sen linkki näkyy pääsivulla.
+Tarvittavat ohjelmat ovat python ja git.
+Sovelluksen asennus alkaa "git clone git@github.com:lanh97/keittokirja.git" komennolla.
+Tämän jälkeen ladataan riippuvuudet "pip install requirements.txt" komennolla.
+Sitten komennolla "python3 run.py" käynnistetään sovellus.
+Komentokehotteen viimeisellä rivillä näet missä portissa kyseinen sovellus pyörii, niin kopioit http alkuisen linkin ja laitat sen selaimeen.
+Nyt sovellus pitäisi toimia.

@@ -3,12 +3,12 @@
 {% block body %}
 <table>
     <tr>
-        <td>If there isn't a ingredient you need, please add.</td>
+        <td>List of added recipes</td>
     </tr>
     {% for recipe in recipes %}
     <tr>
         <td>
-            {{ recipe.name }}
+            <a href="{{ url_for('recipe_ingredient', recipe_id=recipe.id) }}">{{ recipe.name }}</a>
         </td>
     </tr>
     {% endfor %}

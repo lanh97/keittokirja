@@ -1,20 +1,17 @@
 # Keittokirja
-Keittokirjasovellus on kaikille avoin tietokantaohjelma, jossa voi jakaa reseptejä ja ateriakokonaisuuksia. Toisin sanoen avoin resepti ja ateriakokonaisuus "kirja". Jokaisessa reseptissä on valmistusohje ja niihin liittyvät raaka-aineet ja jokaisella aterikokonaisuudella voi olla oma kattaus- tai tarjoiluohje. Tällä keittokirjalla voi myös hakea reseptejä raaka-aineiden perusteella.
+Keittokirjasovellus on kaikille avoin tietokantaohjelma, jossa voi jakaa reseptejä. Toisin sanoen avoin resepti "kirja". Jokaisessa reseptissä on valmistusohje ja niihin liittyvät raaka-aineet.
 
 ## Käyttötapaukset
 Käyttäjä voi kirjautua sivustoon.
 
-Käyttäjä kirjautuneena voi lisätä reseptejä, ateriakokonaisuuksia ja reseptin raaka-aineita.
+Käyttäjä kirjautuneena voi lisätä reseptejäja reseptin raaka-aineita.
 
-Käyttäjänä voit katsella mitä reseptejä/annoksia ateriakokonaisuus sisältää.
+Käyttäjänä voit katsella mitä resepti sisältää.
 
-Käyttäjä kirjautuneena voi poistaa tai muokata reseptejä ja ateriakokonaisuuksia.
+Käyttäjä kirjautuneena voi poistaa tai muokata reseptejä.
 
-Käyttäjä voi hakea reseptejä raaka-aineitten perusteella
+Käyttäjä voi katsoa tilastoja siitä mitä raaka-aineita on käytetty eniten.
 
-(Käyttäjä voi katsoa tilastoja siitä mitä raaka-aineita on käytetty eniten.)
-
-(Ostoslistan teko "jos on aikaa")
 
 ## Tietokantakaavio
 Tietokantakaavio on dokumentaatio kansiossa.

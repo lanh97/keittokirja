@@ -10,6 +10,11 @@
         <td>
             <a href="{{ url_for('recipe_ingredient', recipe_id=recipe.id) }}">{{ recipe.name }}</a>
         </td>
+        <td>
+            <form method="POST" action="{{ url_for('recipe_delete', recipe_id=recipe.id) }}">
+                <input type="submit" value="Delete" />
+            </form>
+        </td>
     </tr>
     {% endfor %}
 </table>

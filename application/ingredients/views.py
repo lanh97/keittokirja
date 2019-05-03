@@ -33,7 +33,7 @@ def ingredient_lisatiedot():
     return redirect(url_for("ingredients_index"))
 
 
-@app.route("/ingredients/<ingredient_id>/", methods=["POST"])
+@app.route("/ingredients/<ingredient_id>/delete", methods=["POST"])
 @login_required
 def ingredients_delete(ingredient_id):
 

@@ -1,4 +1,4 @@
-## Käyttöohje
+﻿## Käyttöohje
 Sivuun pääsee heroku linkistä https://e-keittokirja.herokuapp.com/. 
 Luo ensiksi oma käyttäjä login yläpalkista. 
 Sen jälkeen pääset lisäilemään ruoka-aineksia add ingredients yläpalkista. 

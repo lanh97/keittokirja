@@ -10,6 +10,8 @@ class User(Base):
     username = db.Column(db.String(144), nullable=False, unique=True)
     password = db.Column(db.String(144), nullable=False)
 
+    tasks = db.relationship("Recipe", backref='account', lazy=True, cascade="all, delete-orphan")
+
     def __init__(self, name, username, password):
         self.name = name
         self.username = username

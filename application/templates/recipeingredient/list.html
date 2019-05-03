@@ -2,8 +2,22 @@
 
 {% block body %}
 <table>
+    {% if find_ingre is defined %}
+    <p>
+        Ingredients:
+    </p>
+    <ul>
+        {% for ingre in find_ingre %}
+        <li>
+            {{ingre.name}}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% endif %}
     <tr>
-        <td>Choose a ingredient to add to recipe. If there is not a ingredient in the list please go add it in "Add a
+        <td>Choose an ingredient to add to recipe. If there is not an ingredient in the list, please go add it in "Add
+            an
             Ingredient" tab</td>
     </tr>
     <tr>
@@ -11,12 +25,29 @@
             <td>
                 <select name="ingredient">
                     {% for ingredient in ingredients %}
-                    <option value= {{ ingredient.id }} >{{ ingredient.name }}</option>
+                    <option value={{ ingredient.id }}>{{ ingredient.name }}</option>
                     {% endfor %}
                 </select>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Add">
             </td>
+        </form>
     </tr>
+
+    <form method="POST" action="{{ url_for('recipe_update') }}">
+        <tr>
+            <td>{{ form.details.label }}</td>
+            <td>{{ form.details }}</td>
+        </tr>
+        <tr>
+            <td>{{ form.cookinginstructions.label }}</td>
+            <td>{{ form.cookinginstructions }}</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update recipe" />
+            </td>
+        </tr>
     </form>
+
 </table>
 {% endblock %}

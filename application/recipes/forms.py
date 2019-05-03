@@ -8,3 +8,10 @@ class RecipeForm(FlaskForm):
 
     class Meta:
         csrf = False
+
+class RecipeupdateForm(FlaskForm):
+    details = TextAreaField("Details")
+    cookinginstructions = TextAreaField("Cooking Instructions")
+
+    class Meta:
+        csrf = False

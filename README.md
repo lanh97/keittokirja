@@ -20,5 +20,5 @@ Tietokantakaavio on dokumentaatio kansiossa.
 https://e-keittokirja.herokuapp.com/
 
 ## Testitunnukset
-username: hello
-password: world
+username: testi
+password: testi

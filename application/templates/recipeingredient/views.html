@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<table>
+    <tr>
+        <td><b>Details</b></td>
+    </tr>
+    <tr>
+        <td>{{ recipe.details }}</td>
+    </tr>
+    <tr>
+        <td>{% if find_ingre is defined %}
+            <b>
+                Ingredients:
+            </b>
+            <ul>
+                {% for ingre in find_ingre %}
+                <li>
+                    {{ingre.name}}
+                </li>
+                {% endfor %}
+            </ul>
+
+            {% endif %}
+        </td>
+    </tr>
+
+
+    <tr>
+        <td><b>Cooking Instructions</b></td>
+    </tr>
+    <tr>
+        <td>{{ recipe.cookinginstructions }}</td>
+    </tr>
+
+</table>
+{% endblock %}

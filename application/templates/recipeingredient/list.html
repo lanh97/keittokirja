@@ -39,15 +39,23 @@
             <td>{{ form.details }}</td>
         </tr>
         <tr>
-            <td>{{ form.cookinginstructions.label }}</td>
-            <td>{{ form.cookinginstructions }}</td>
-        </tr>
-        <tr>
             <td>
-                <input type="submit" value="Update recipe" />
+                <input type="submit" value="Update Details" />
             </td>
         </tr>
     </form>
+    <form method="POST" action="{{ url_for('recipe_update2') }}"></form>
+    <tr>
+        <td>{{ form.cookinginstructions.label }}</td>
+        <td>{{ form.cookinginstructions }}</td>
+    </tr>
+    <tr>
+        <td>
+            <input type="submit" value="Update Cookinginstructions" />
+        </td>
+    </tr>
+    </form>
+
 
 </table>
 {% endblock %}

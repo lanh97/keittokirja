@@ -18,6 +18,12 @@ def recipes_form():
     return render_template("recipes/new.html", form=RecipeForm())
 
 
+@app.route("/recipes/<recipe_id>/view")
+def recipes_view(recipe_id):
+    session["recipeid"] = recipe_id
+    return render_template("recipeingredient/views.html", recipe=Recipe.query.get(recipe_id), find_ingre=Recipe.recipes_ingredients(recipe_id))
+
+
 @app.route("/recipes/", methods=["POST"])
 @login_required
 def recipes_create():
@@ -48,19 +54,18 @@ def recipe_update():
     form = RecipeupdateForm(request.form)
     id = session["recipeid"]
     recip = Recipe.query.get(id)
-
-    none = ""
-
-    if form.details == none:
-        pass
-    else:
-        recip.details = form.details.data
-
-    if form.cookinginstructions == none:
-        pass
-    else:
-        recip.cookinginstructions = form.cookinginstructions.data
+    recip.details = form.details.data
     
+    db.session().commit()
+    return redirect(url_for("recipes_index"))
+
+@app.route("/recipes/cookinginstructions", methods=["POST"])
+@login_required
+def recipe_update2():
+    form = RecipeupdateForm(request.form)
+    id = session["recipeid"]
+    recip = Recipe.query.get(id)
+    recip.cookinginstructions = form.cookinginstructions.data
     db.session().commit()
     return redirect(url_for("recipes_index"))
 
@@ -90,4 +95,15 @@ def recipe_delete(recipe_id):
     db.session().commit()
 
     return redirect(url_for("recipes_index"))
+
+@app.route("/recipe/<recipe_id>/redirect", methods=["POST"])
+@login_required
+def recipe_update_redirect(recipe_id):
+
+    recip = Recipe.query.get(recipe_id)
+
+    if recip.account_id != current_user.id:
+        return redirect(url_for("index"))
+
+    return redirect(url_for("recipe_ingredient",recipe_id=recipe_id))
 

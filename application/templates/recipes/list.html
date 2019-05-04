@@ -8,8 +8,13 @@
     {% for recipe in recipes %}
     <tr>
         <td>
-            <a href="{{ url_for('recipe_ingredient', recipe_id=recipe.id) }}">{{ recipe.name }}</a>
+            <a href="{{ url_for('recipes_view', recipe_id=recipe.id) }}">{{ recipe.name }}</a>
         </td>
+        <td>
+                <form method="POST" action="{{ url_for('recipe_update_redirect', recipe_id=recipe.id) }}">
+                    <input type="submit" value="Update" />
+                </form>
+            </td>
         <td>
             <form method="POST" action="{{ url_for('recipe_delete', recipe_id=recipe.id) }}">
                 <input type="submit" value="Delete" />

@@ -21,7 +21,7 @@ class Recipe(Base):
 
     @staticmethod
     def find_recipes_with_no_ingredients():
-        stmt = text("SELECT recipe.id, recipe.name FROM recipe"
+        stmt = text("SELECT recipe.name FROM recipe"
                      " LEFT JOIN recipe_ingredient ON recipe_ingredient.recipe_id = recipe.id"
                      " GROUP BY recipe.id"
                      " HAVING COUNT(recipe_ingredient.id) = 0")
@@ -29,14 +29,14 @@ class Recipe(Base):
 
         response = []
         for row in res:
-            response.append({"id":row[0], "name":row[1]})
+            response.append({"name":row[0]})
 
         return response
 
     @staticmethod
     def recipes_ingredients(para):
         stmt = text("SELECT ingredient.name FROM ingredient, recipe, recipe_ingredient"
-        " WHERE recipe_id = recipe_ingredient.recipe_id" 
+        " WHERE recipe.id = recipe_ingredient.recipe_id" 
         " AND ingredient.id = recipe_ingredient.ingredient_id" 
         " AND recipe.id = :para"
         " GROUP BY ingredient.name;").params(para = para)

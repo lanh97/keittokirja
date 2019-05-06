@@ -3,16 +3,26 @@
 {% block body %}
 <table>
   <tr>
+    <td>
+      <b>{{ ingredient.name }}</b>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      {{ ingredient.details }}
+    </td>
+  </tr>
+  <tr>
     <th>
       <form method="POST" action="{{ url_for('ingredient_lisatiedot') }}">
-        {{ form.details.label }}
+        {{ form.details.label }} update
     </th>
   </tr>
   <tr>
     <td>{{ form.details }}</td>
   </tr>
   <tr>
-    <td> <input type="submit" value="Add" /> </td>
+    <td> <input type="submit" value="Update" /> </td>
   </tr>
 
 

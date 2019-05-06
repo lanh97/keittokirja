@@ -16,4 +16,18 @@
 
 {% endif %}
 
+{% if ingredient_use is defined %}
+<p>
+  Here we can see how many recipes use these ingredients.
+</p>
+<ul>
+  {% for ingredient in ingredient_use %}
+  <li>
+    {{ingredient.name}}  {{ ingredient.amount }}
+  </li>
+  {% endfor %}
+</ul>
+
+{% endif %}
+
 {% endblock %}

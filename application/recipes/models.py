@@ -47,3 +47,17 @@ class Recipe(Base):
             response.append({"name":row[0]})
 
         return response
+
+
+    @staticmethod
+    def ingredient_use():
+        stmt = text("SELECT ingredient.name AS name, COUNT(recipe_ingredient.id) AS number FROM ingredient"
+        " LEFT JOIN recipe_ingredient ON ingredient.id = recipe_ingredient.ingredient_id"
+        " GROUP BY ingredient.name ORDER BY number DESC;")
+        res = db.engine.execute(stmt)
+
+        response = []
+        for row in res:
+            response.append({"name":row[0], "amount":row[1]})
+
+        return response

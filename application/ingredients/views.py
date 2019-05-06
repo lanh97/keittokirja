@@ -19,7 +19,7 @@ def ingredients_form():
 @app.route("/ingredients/<ingredient_id>/", methods=["GET"])
 def singredient_index(ingredient_id):
     session["ingredientid"] = ingredient_id
-    return render_template("ingredients/id.html", form=IngredientForm())
+    return render_template("ingredients/id.html", form=IngredientForm(), ingredient=Ingredient.query.get(ingredient_id))
 
 
 @app.route("/ingredients/details", methods=["POST"])

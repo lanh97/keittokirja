@@ -44,16 +44,16 @@
             </td>
         </tr>
     </form>
-    <form method="POST" action="{{ url_for('recipe_update2') }}"></form>
-    <tr>
-        <td>{{ form.cookinginstructions.label }}</td>
-        <td>{{ form.cookinginstructions }}</td>
-    </tr>
-    <tr>
-        <td>
-            <input type="submit" value="Update Cookinginstructions" />
-        </td>
-    </tr>
+    <form method="POST" action="{{ url_for('recipe_update2') }}">
+        <tr>
+            <td>{{ form.cookinginstructions.label }}</td>
+            <td>{{ form.cookinginstructions }}</td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Update Cooking Instructions" />
+            </td>
+        </tr>
     </form>
 
 

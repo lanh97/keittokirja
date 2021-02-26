@@ -1,5 +1,5 @@
 # Keittokirja
-Keittokirjasovellus on kaikille avoin tietokantaohjelma, jossa voi jakaa reseptejä. Toisin sanoen avoin resepti "kirja". Jokaisessa reseptissä on valmistusohje ja niihin liittyvät raaka-aineet.
+Keittokirjasovellus on kaikille avoin tietokantaohjelma tehty tietokanta sovellus kurssia varten, jossa voi jakaa reseptejä. Toisin sanoen avoin resepti "kirja". Jokaisessa reseptissä on valmistusohje ja niihin liittyvät raaka-aineet.
 
 ## Käyttötapaukset
 Käyttäjä voi kirjautua sivustoon.
